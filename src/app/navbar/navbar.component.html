@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container" style="height:65px">
+        <a class="navbar-brand">
+            <img src="../../assets/logo.png" style="height: 50px; width:85">
+            Game Over</a>
+        <div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link" routerLink="all" routerLinkActive="active">All</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Platforms
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li [routerLink]="['games/platform',p.platname]" [class.selected]="p === userPlat" (click)="selectPlatform(p)" *ngFor="let p of platform"  ><a class="dropdown-item">{{p.platname}}</a></li>
+                    </ul>
+                </li>
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        sort-by
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li [routerLink]="['games/sort-by',s.sortname]" [class.selected]="s === userSort" (click)="selectSort(s)" *ngFor="let s of sort" ><a class="dropdown-item">{{s.sortname}}</a></li>
+                        
+                    </ul>
+                </li>
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li [routerLink]="['games/categories',c.catname]" [class.selected]="c === userCat" (click)="selectCategory(c)" *ngFor="let c of category" ><a class="dropdown-item">{{c.catname}}</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        </div>
+        <div class="navbar-nav mb-2 mb-lg-0 ml-auto justify-content-end">
+            <button *ngIf="!isLogin" class="btn btn-outline-primary" routerLink="login">login</button>
+            <button *ngIf="!isLogin" class="btn btn-outline-primary" routerLink="register"
+                style="margin-left: 20px;">Join Free</button>
+            <button *ngIf="isLogin" (click)="logout()" class="btn btn-outline-primary" routerLink="register"
+                style="margin-left: 20px;">logout</button>
+
+        </div>
+    </div>
+</nav>

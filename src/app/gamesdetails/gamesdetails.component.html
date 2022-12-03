@@ -1,0 +1,72 @@
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <img src={{gameDetailesData.thumbnail}} class="w-100">
+        </div>
+        <div class="col-md-8">
+            <div>
+                <h2>{{gameDetailesData.title}}</h2>
+                <h4 style="color: rgba(255, 255, 255, 0.329);">{{gameDetailesData.title | about}}</h4>
+
+                <p>{{gameDetailesData.description}}</p>
+                <h5 style="color: rgba(255, 255, 255, 0.329);">Minimum System Requirements</h5>
+                <div style="color: rgba(255, 255, 255, 0.329);">
+                    <p>graphics :{{ gameDetailesData.minimum_system_requirements.graphics}}</p>
+                    <p>memory :{{ gameDetailesData.minimum_system_requirements.memory}}</p>
+                    <p>os :{{ gameDetailesData.minimum_system_requirements.os}}</p>
+                    <p>processor :{{ gameDetailesData.minimum_system_requirements.processor}}</p>
+                    <p>storage :{{ gameDetailesData.minimum_system_requirements.storage}}</p>
+                </div>
+                <br>
+                <h3 style="color: rgba(255, 255, 255, 0.329);">
+                    {{gameDetailesData.title | lable}}
+                </h3>
+
+                <div class="row">
+                    <owl-carousel-o [options]="customOptions">
+                  
+                      <ng-container *ngFor="let screen of screenshots">
+                        <ng-template carouselSlide>
+                          <img [src]="screen.image" class="w-100">
+                        </ng-template>
+                      </ng-container>
+                  
+                    </owl-carousel-o>
+                  </div>
+
+                  <br>
+                  <br>
+
+                  <h2>Additional Information</h2>
+                  <br>
+                  
+                  <div class="row">
+                    <div class="col-md-4">
+                      {{gameDetailesData.title}}
+                    </div>
+                    <div class="col-md-4">
+                      {{gameDetailesData.developer}}
+                    </div>
+                    <div class="col-md-4">
+                      {{gameDetailesData.publisher}}
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <div class="row">
+                    <div class="col-md-4">
+                      {{gameDetailesData.release_date}}
+                    </div>
+                    <div class="col-md-4">
+                      {{gameDetailesData.genre}}
+                    </div>
+                    <div class="col-md-4">
+                      {{gameDetailesData.platform}}
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

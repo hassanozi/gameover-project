@@ -1,0 +1,16 @@
+<div class="container">
+    <br>
+    <!-- <h3 class="fas fa-robot mr-2" style="color: rgba(255, 255, 255, 0.403);">Personalized Recommendations</h3> -->
+    <br>
+    <div class="row">
+        <div class="col-md-3" *ngFor="let game of gamesSorted">
+            <div>
+                
+                <img [src]="game.thumbnail" class="w-100">
+                <h2 class="fs-5" style="color: rgba(255, 255, 255, 0.345);">{{game.title}}</h2>
+                <p>{{game.short_description}}</p>
+            </div>
+        </div>
+    </div>
+    
+</div>

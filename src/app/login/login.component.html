@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <br>
+            <br>
+            <img src="../../assets/gaming.jpg" style="height: 85%; width: 100%;">
+        </div>
+        <div class="col-md-6">
+            <br>
+            <br>
+            <div class="container" style="height: 85%; width: 100%; background-color: rgba(128, 128, 128, 0.126);">
+                <form [formGroup]="loginForm" (ngSubmit)="sendData(loginForm)">
+                    <br>
+                    <!-- <br>
+                    <br> -->
+                    <img style="margin-left: 240px;height: 65px; width:105" src="../../assets/logo.png" >
+                    <h4 style="margin-left: 180px;color: rgb(128, 128, 128);">Log in to GameOver</h4>
+                    <div class="row">
+                        
+                       
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="email" formControlName="email" class="form-control input-sm"
+                                    style="color: rgb(2, 2, 2);border-color: rgb(21, 21, 22);"
+                                    placeholder="Email">
+                                <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+                                    <div *ngIf="loginForm.get('email')?.errors?.['required']"
+                                        class="alert alert-warning py-0 mt-1">
+                                        <p>email is required</p>
+                                    </div>
+                                    <div *ngIf="loginForm.get('email')?.errors?.['email']"
+                                        class="alert alert-warning py-0 mt-1">
+                                        <p>email not valid</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="password" formControlName="password" class="form-control input-sm"
+                                    style="color: rgb(11, 11, 11);border-color: rgb(21, 21, 22)"
+                                    placeholder="Password">
+                            </div>
+                            <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+                                <div *ngIf="loginForm.get('password')?.errors?.['required']" class="alert alert-warning py-0 mt-1">
+                                    <p>password is required</p>
+                                </div>
+                                <div *ngIf="loginForm.get('password')?.errors?.['pattern']" class="alert alert-warning py-0 mt-1">
+                                    <p>Min 8 and maz is 16</p>
+                                </div>
+            
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <!-- <button type="submit" [disabled]="loginForm.invalid" class="form-control input-sm"
+                                style="background-color: rgba(21, 20, 20, 0.518); color: azure;border-color: rgb(21, 21, 22);">
+                                    <span *ngIf="!isLoading">login</span>
+                                    <span *ngIf="isLoading"><i class="fa-solid fa-spinner fa-spin"></i></span>
+                                </button> -->
+                                <button type="submit" [disabled]="loginForm.invalid" class="form-control input-sm"
+                                    style="background-color: rgba(21, 20, 20, 0.518); color: azure;border-color: rgb(21, 21, 22);">
+                                    <span *ngIf="!isLoading">login</span>
+                                    <div *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                                        <span  class="visually-hidden">Loading...</span>
+                                      </div>
+                                    <!-- <span *ngIf="isLoading"><i class="fa-solid fa-spinner fa-spin">login</i></span> -->
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            
+                <hr>
+                <h5 style="color: rgb(56, 56, 251); margin-top: 15px;margin-left: 200px;">Forgot Password?
+                </h5>
+                <h5 class="text-muted small" style="margin-top: 15px;margin-left: 200px;">Not a member yet?  <span
+                    routerLink="/login" routerLinkActive="active" style="color: rgb(75, 99, 202);"> Create Account ></span>
+            </h5>
+            </div>
+        </div>
+    </div>
+</div>

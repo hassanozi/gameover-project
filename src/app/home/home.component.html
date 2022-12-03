@@ -1,0 +1,33 @@
+<div class="row" style="height: 85%;  background-color: rgba(11, 10, 10, 0.126);">
+    <br>
+    <br>
+    <h1 style="margin-left: 25%;color: rgba(255, 255, 255, 0.403);">Find & track the best <span style="color: rgb(85, 85, 222);">free-to-play</span>  games!</h1>
+    <h1 style="margin-left: 26%;" class="lead text-muted" >Track what you've played and search for what to play next! Plus get free premium loot!</h1>
+    <br>
+    <br>
+    <button class="btn btn-outline-secondary btn-md ml-0" style="margin-left: 45%;width: 150px;margin-bottom: 5%;margin-top: 20px;">Brows Games</button>
+</div>
+<div class="container">
+    <br>
+    <h3 class="fas fa-robot mr-2" style="color: rgba(255, 255, 255, 0.403);">Personalized Recommendations</h3>
+    <br>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let game of recommenedGames.slice(0, 3)" >
+            <div class="position-relative">
+                <a [routerLink]="['/gamesDetails',game.id]">
+                <img [src]="game.thumbnail" class="game card mb-4 grow shadow">
+                <div class="row" style="background-color: rgba(255, 255, 255, 0.21); width: 375px;">
+                    <div class="col-md-8">
+                        <h2 class="fs-6" style="color: rgba(255, 255, 255, 0.345)">{{game.title}}</h2>
+                    </div>
+                    <div class="col-md-2">
+                        <span class="badge badge-ftg py-2 px-2 float-right;" style="background-color: rgb(54, 54, 245);">Free</span>
+                    </div>
+                </div>
+                <!-- <p>{{game.short_description | recomended:3}}</p> -->
+            </a>
+            </div>
+        </div>
+    </div>
+    
+</div>
