@@ -1,24 +1,20 @@
-<div class="container">
+<div >
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 item1">
             <br>
             <br>
-            <img src="../../assets/gaming.jpg" style="height: 85%; width: 100%;">
+            <img class="imgs1" src="../../assets/gaming.jpg" >
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 item2">
             <br>
             <br>
-            <div class="container" style="height: 85%; width: 100%; background-color: rgba(128, 128, 128, 0.126);">
                 <form [formGroup]="loginForm" (ngSubmit)="sendData(loginForm)">
                     <br>
                     <!-- <br>
                     <br> -->
-                    <img style="margin-left: 240px;height: 65px; width:105" src="../../assets/logo.png" >
-                    <h4 style="margin-left: 180px;color: rgb(128, 128, 128);">Log in to GameOver</h4>
-                    <div class="row">
-                        
-                       
-                    </div>
+                    <img class="imgs2" src="../../assets/logo.png" >
+                    <h4 style="color: rgb(128, 128, 128);">Log in to GameOver</h4>
+                   
                     <br>
                     <div class="row">
                         <div class="col-md-12">
@@ -92,7 +88,6 @@
                 <h5 class="text-muted small" style="margin-top: 15px;margin-left: 200px;">Not a member yet?  <span
                     routerLink="/login" routerLinkActive="active" style="color: rgb(75, 99, 202);"> Create Account ></span>
             </h5>
-            </div>
         </div>
     </div>
 </div>
